@@ -1,3 +1,4 @@
+//5 ms
 class Solution {
     public boolean isAnagram(String s, String t) {
         if(s.length()!=t.length()) return false;
@@ -14,6 +15,23 @@ class Solution {
 
 
         return true;
+
+
+    }
+}
+//3 ms
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length()!=t.length()) return false;
+       
+        char[] tdata = s.toCharArray();
+        Arrays.sort(tdata);
+        char[] sdata = t.toCharArray();
+        Arrays.sort(sdata);
+        String tresult = new String(tdata);
+        String sresult = new String(sdata);
+
+        return sresult.equals(tresult);
 
 
     }
